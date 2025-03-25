@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dataforge-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./tmp:/app/tmp
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped 

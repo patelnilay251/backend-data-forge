@@ -1,0 +1,14 @@
+services:
+  # Backend service
+  - type: web
+    name: dataforge-backend
+    env: docker
+    plan: free
+    region: oregon  # Choose the region closest to your users
+    branch: main    # Use your deployment branch
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: PORT
+        value: 8000 
